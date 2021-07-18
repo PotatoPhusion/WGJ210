@@ -8,19 +8,19 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Fragment 0
+  - Fragment 1
+  - Fragment 2
+  - Fragment 3
+  - Fragment 4
+  - Fragment 5
+  - Fragment 6
+  - Fragment 7
+  - Fragment 8
+  - Fragment 9
   - 
   - 
   - 
@@ -40,4 +40,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Level
+    uniqueID: 2398051029
     locked: 0
