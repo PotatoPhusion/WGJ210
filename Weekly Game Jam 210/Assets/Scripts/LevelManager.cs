@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class LevelManager : MonoBehaviour
 {
     public GameObject player;
-    public Renderer levelGeoRenderer;
+    public Renderer blackScreenRenderer;
     private Material fractureMat;
 
     public int activeCollisionLayers;
@@ -42,7 +42,7 @@ public class LevelManager : MonoBehaviour
 
     void Start()
     {
-        fractureMat = levelGeoRenderer.sharedMaterial;
+        fractureMat = blackScreenRenderer.sharedMaterial;
         HideAllFragments();
         for (int i = 0; i < revealedSectors.Length; i++)
         {

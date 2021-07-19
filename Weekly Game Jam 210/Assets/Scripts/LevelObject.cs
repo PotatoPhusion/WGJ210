@@ -5,11 +5,12 @@ using UnityEngine;
 public class LevelObject : MonoBehaviour
 {
     public int mySector;
-    private SpriteRenderer rend;
+
+    private SpriteRenderer[] childRenderers;
 
     private void Start()
     {
-        rend = GetComponent<SpriteRenderer>();
+        childRenderers = GetComponentsInChildren<SpriteRenderer>();
         gameObject.layer = 6 + mySector;
     }
 
@@ -17,11 +18,23 @@ public class LevelObject : MonoBehaviour
     {
         if (LevelManager.Instance.revealedSectors[mySector])
         {
-            rend.enabled = true;
+            if (childRenderers != null)
+            {
+                for (int i = 0; i < childRenderers.Length; i++)
+                {
+                    childRenderers[i].enabled = true;
+                }
+            }
         }
         else
         {
-            rend.enabled = false;
+            if (childRenderers != null)
+            {
+                for (int i = 0; i < childRenderers.Length; i++)
+                {
+                    childRenderers[i].enabled = false;
+                }
+            }
         }
     }
 }

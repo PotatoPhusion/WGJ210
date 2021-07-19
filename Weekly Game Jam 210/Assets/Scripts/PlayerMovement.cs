@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public float moveSpeed = 1f;
+
     private CharacterController controller;
     private float h_input = 0f;
     private bool jump = false;
@@ -24,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        controller.Move(h_input, jump);
+        controller.Move(h_input * moveSpeed, jump);
         jump = false;
     }
 }
