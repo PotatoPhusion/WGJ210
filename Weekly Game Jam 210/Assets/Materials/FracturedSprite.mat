@@ -32,7 +32,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 677da220ec459b541b2fb3c866c3576a, type: 3}
+        m_Texture: {fileID: 2800000, guid: a0b10ae97636aa240a465a5dc21a6ee3, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MaskTex:
@@ -57,16 +57,17 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - Range0: 0.3
-    - Range1: 0.3
-    - Range2: 0.3
+    - Range0: -0.1
+    - Range1: -0.1
+    - Range2: -0.1
     - Range3: -0.1
     - Range4: 0.3
-    - Range5: -0.1
+    - Range5: 0.3
     - Range6: -0.1
     - Range7: -0.1
     - Range8: -0.1
     - Range9: -0.1
+    - Scale: 29
     - _EnableExternalAlpha: 0
     - _Range: 0.68
     m_Colors:
@@ -81,7 +82,9 @@ Material:
     - Color8: {r: 0.1921569, g: 0.3803922, b: 0.5176471, a: 1}
     - Color9: {r: 0, g: 0, b: 1, a: 1}
     - Color_5E5E99E: {r: 0.3568628, g: 0.4313726, b: 1, a: 1}
+    - Tiling: {r: 1, g: 1, b: 0, a: 0}
     - _Color: {r: 0.26032394, g: 0.63875324, b: 0.735849, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _Offset: {r: 0.1, g: 0.1, b: 0, a: 0}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []

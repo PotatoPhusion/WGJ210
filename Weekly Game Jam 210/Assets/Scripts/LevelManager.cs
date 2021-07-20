@@ -53,7 +53,8 @@ public class LevelManager : MonoBehaviour
 
     void Update()
     {
-
+        if (Input.GetKeyDown(KeyCode.R))
+            ReloadLevel();
     }
 
     public void ChangeFragmentLayers(int mask, bool overwrite)
@@ -94,5 +95,15 @@ public class LevelManager : MonoBehaviour
     {
         int sceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(sceneIndex + 1);
+    }
+
+    public void LevelFailed()
+    {
+        ReloadLevel();
+    }
+
+    public void ReloadLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
