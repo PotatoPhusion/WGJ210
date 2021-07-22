@@ -8,6 +8,7 @@ public class CameraController : MonoBehaviour
     {
         Camera cam = GetComponent<Camera>();
         float targetWidth = cam.orthographicSize * 16f / 9f;
-        cam.orthographicSize = targetWidth / cam.aspect;
+        if (cam.aspect < 16f / 9f)
+            cam.orthographicSize = targetWidth / cam.aspect;
     }
 }

@@ -57,12 +57,12 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - Range0: -0.1
+    - Range0: 0.3
     - Range1: -0.1
     - Range2: -0.1
     - Range3: -0.1
     - Range4: 0.3
-    - Range5: 0.3
+    - Range5: -0.1
     - Range6: -0.1
     - Range7: -0.1
     - Range8: -0.1

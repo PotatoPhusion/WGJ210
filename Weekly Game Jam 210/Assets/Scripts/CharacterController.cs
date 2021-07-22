@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class CharacterController : MonoBehaviour
 {
@@ -9,16 +8,24 @@ public class CharacterController : MonoBehaviour
     [SerializeField] private bool airControl = false;
     [SerializeField] private Transform groundCheck;
 
-    const float GROUNDED_RADIUS = 0.2f;
+    const float GROUNDED_RADIUS = 0.1f;
     private LayerMask groundMask;
     private bool isGrounded;
     private Rigidbody2D rb;
     private bool isFacingRight = true;
     private Vector3 velocity = Vector3.zero;
 
+    [Header("Events")]
+    [Space]
+
+    public UnityEvent OnLandEvent;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+
+        if (OnLandEvent == null)
+            OnLandEvent = new UnityEvent();
     }
 
     private void FixedUpdate()
@@ -34,6 +41,8 @@ public class CharacterController : MonoBehaviour
             if (colliders[i].gameObject != gameObject)
             {
                 isGrounded = true;
+                if (!wasGrounded)
+                    OnLandEvent.Invoke();
             }
         }
     }
@@ -57,7 +66,7 @@ public class CharacterController : MonoBehaviour
 
         if (isGrounded && jump)
         {
-            isGrounded = false;
+            //isGrounded = false;
             rb.AddForce(new Vector2(0f, jumpForce));
         }
     }

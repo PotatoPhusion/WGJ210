@@ -21,22 +21,13 @@ public class LevelManager : MonoBehaviour
     private const float REVEALED_FRAGMENT = 0.3f;
     private const float HIDDEN_FRAGMENT = -0.1f;
 
-    private static LevelManager instance;
-    public static LevelManager Instance { 
-        get {
-            return instance;
-        }
-    }
+	public static LevelManager Instance { get; private set; }
 
-    private void Awake()
+	private void Awake()
     {
-        if (instance == null)
+        if (Instance != this)
         {
-            instance = this;
-        }
-        else if (instance != this)
-        {
-            Destroy(gameObject);
+            Instance = this;
         }
     }
 
@@ -55,11 +46,14 @@ public class LevelManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R))
             ReloadLevel();
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+            SceneManager.LoadScene("MainMenu");
     }
 
     public void ChangeFragmentLayers(int mask, bool overwrite)
     {
-        int layers = 1;
+        int layers = 1;         // Always collide with default
 
         if (overwrite)
         {
@@ -71,7 +65,6 @@ public class LevelManager : MonoBehaviour
         }
 
         activeCollisionLayers = layers;
-        Physics2D.SetLayerCollisionMask(3, activeCollisionLayers);
     }
 
     private void HideAllFragments()
@@ -94,7 +87,11 @@ public class LevelManager : MonoBehaviour
     public void LevelComplete()
     {
         int sceneIndex = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadScene(sceneIndex + 1);
+        int nextScene = (sceneIndex + 1) % SceneManager.sceneCountInBuildSettings;
+        if (nextScene == 0)
+            nextScene = 1;
+
+        SceneManager.LoadScene(nextScene);
     }
 
     public void LevelFailed()
@@ -104,6 +101,6 @@ public class LevelManager : MonoBehaviour
 
     public void ReloadLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
     }
 }

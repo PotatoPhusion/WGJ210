@@ -7,10 +7,12 @@ public class LevelObject : MonoBehaviour
     public int mySector;
 
     private SpriteRenderer[] childRenderers;
+    private Collider2D[] colliders;
 
     private void Start()
     {
         childRenderers = GetComponentsInChildren<SpriteRenderer>();
+        colliders = GetComponents<Collider2D>();
         gameObject.layer = 6 + mySector;
     }
 
@@ -25,6 +27,13 @@ public class LevelObject : MonoBehaviour
                     childRenderers[i].enabled = true;
                 }
             }
+            if (colliders != null)
+            {
+                for (int i = 0; i < colliders.Length; i++)
+                {
+                    colliders[i].enabled = true;
+                }
+            }
         }
         else
         {
@@ -33,6 +42,13 @@ public class LevelObject : MonoBehaviour
                 for (int i = 0; i < childRenderers.Length; i++)
                 {
                     childRenderers[i].enabled = false;
+                }
+            }
+            if (colliders != null)
+            {
+                for (int i = 0; i < colliders.Length; i++)
+                {
+                    colliders[i].enabled = false;
                 }
             }
         }
