@@ -58,15 +58,15 @@ Material:
     m_Ints: []
     m_Floats:
     - Range0: 0.3
-    - Range1: -0.1
-    - Range2: -0.1
-    - Range3: -0.1
+    - Range1: 0.3
+    - Range2: 0.3
+    - Range3: 0.3
     - Range4: 0.3
     - Range5: -0.1
-    - Range6: -0.1
-    - Range7: -0.1
-    - Range8: -0.1
-    - Range9: -0.1
+    - Range6: 0.3
+    - Range7: 0.3
+    - Range8: 0.3
+    - Range9: 0.3
     - Scale: 29
     - _EnableExternalAlpha: 0
     - _Range: 0.68

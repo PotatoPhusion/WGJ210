@@ -49,7 +49,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - Distance: 0.076
+    - Distance: 0
     - Scale: 128
     - _EnableExternalAlpha: 0
     - _Offset: 0.75
