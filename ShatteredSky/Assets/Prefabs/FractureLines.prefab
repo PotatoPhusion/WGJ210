@@ -93,9 +93,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6293669158947839577}
-  - component: {fileID: 7851125523940287811}
+  - component: {fileID: 3693307326922354500}
   m_Layer: 0
-  m_Name: Vertices
+  m_Name: Fragment_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -115,7 +115,7 @@ Transform:
   m_Father: {fileID: 4841297029268871581}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7851125523940287811
+--- !u!114 &3693307326922354500
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -124,6 +124,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 9005144773258012960}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3179ff35ec4f179438e823c0161c30ed, type: 3}
+  m_Script: {fileID: 11500000, guid: bb8029462593dec43b4ad19fcc65fba4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  path:
+    points:
+    - {x: -3.5342383, y: 5.4460106}
+    - {x: -4.100269, y: 2.9308484}
+    - {x: -4.3479767, y: 1.8369796}
+    - {x: -5.130933, y: 2.4122124}
+    - {x: -5.7552238, y: -0.11477578}
+    - {x: -6.304571, y: -0.007958233}
+    - {x: -7.166741, y: -0.39707917}
+    - {x: -9.24163, y: 0.57722783}
+    - {x: -9.316825, y: 5.4376144}
+    isClosed: 1
